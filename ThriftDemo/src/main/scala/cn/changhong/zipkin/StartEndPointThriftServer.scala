@@ -20,12 +20,10 @@ object StartEndPointThriftServer {
     override def indexNews(indexNews: NewsModel): Future[Boolean] = Future.value{
       true
     }
-
     override def deleteArtificaillyNes(id: Int): Future[Int] = Future.value{
       new Random().nextInt()
     }
   }
-  //serverhost serverport name zkhost zkport
   def main(args:Array[String]): Unit ={
     require(args!=null && args.length>4)
     val service=new IndexNewsOperatorServices.FinagledService(IndexNewsOperationImp,new TBinaryProtocol.Factory())
