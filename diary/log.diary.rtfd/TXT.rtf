@@ -8,7 +8,8 @@
 \red52\green110\blue183;\red217\green11\blue0;\red255\green39\blue18;\red46\green46\blue46;\red234\green234\blue234;
 \red24\green32\blue123;\red143\green143\blue143;\red246\green246\blue246;\red74\green74\blue74;\red225\green223\blue212;
 \red10\green82\blue135;\red0\green0\blue255;\red18\green139\blue2;\red15\green114\blue1;\red109\green109\blue109;
-\red0\green61\blue204;\red83\green83\blue83;\red105\green105\blue105;}
+\red0\green61\blue204;\red83\green83\blue83;\red105\green105\blue105;\red19\green73\blue175;\red242\green242\blue242;
+\red38\green38\blue38;\red255\green255\blue255;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
 {\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
 {\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
@@ -22,7 +23,7 @@
 {\list\listtemplateid11\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}.}{\leveltext\leveltemplateid1001\'01.;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid11}
 {\list\listtemplateid12\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid12}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}{\listoverride\listid9\listoverridecount0\ls9}{\listoverride\listid10\listoverridecount0\ls10}{\listoverride\listid11\listoverridecount0\ls11}{\listoverride\listid12\listoverridecount0\ls12}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15240\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15160\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
 \f0\fs24 \cf0 \'b7\'fe\'ce\'f1\'c6\'f7\'b6\'cb\'ca\'da\'c8\'a8\
@@ -3159,9 +3160,11 @@ to your ClientBuilder or ServerBuilder. Setting up the whole Zipkin stack is a b
 \f0\fs32 \cf5 \
 \
 zipkin\'bd\'e9\'c9\'dc\
-{\field{\*\fldinst{HYPERLINK "http://itszero.github.io/blog/2014/03/03/introduction-to-twitters-zipkin/"}}{\fldrslt http://itszero.github.io/blog/2014/03/03/introduction-to-twitters-zipkin/}}\
+\pard\tx566\pardeftab720\sl500
+{\field{\*\fldinst{HYPERLINK "http://itszero.github.io/blog/2014/03/03/introduction-to-twitters-zipkin/"}}{\fldrslt \cf5 http://itszero.github.io/blog/2014/03/03/introduction-to-twitters-zipkin/}}\
+\pard\tx566\pardeftab720\sl500
 
-\f4 \
+\f4 \cf5 \
 \
 scala \
 //
@@ -3201,7 +3204,95 @@ class Method1 extends ((String) =>String) with ((String,String)=>Unit)\{\
   override def apply(v1: String, v2: String): Unit = ???\
 \}\
 \
-finagle trace({\field{\*\fldinst{HYPERLINK "http://blog.oskarsson.nu/post/40196324612/the-twitter-stack"}}{\fldrslt http://blog.oskarsson.nu/post/40196324612/the-twitter-stack}})\
 \
 \
+\
+\
+trait SoaTrace\{self=>\
+  def apply():Unit\
+\}\
+trait IBusface\{ trace:SoaTrace =>\
+  def test(s:String):Unit\
+  \
+\}\
+class BusImpl extends IBusface with SoaTrace\{\
+  override def test(s: String): Unit = ???\
+\
+  override def apply: Unit = ???\
+\}\
+implicit 
+\f0 \'d2\'fe\'ca\'bd\'c0\'e0\'d0\'cd\'d7\'aa\'bb\'bb\
+{\field{\*\fldinst{HYPERLINK "http://meetfp.com/zh/blog/implicit"}}{\fldrslt http://meetfp.com/zh/blog/implicit}}
+\f4 \
+\pard\pardeftab720\sl400
+
+\f2\fs28 \cf28 \cb29 implicit class IntExtendToDuration(i: Int) \{\
+  def seconds = Seconds(i)\
+  def minutes = Minutes(i)\
+  def hours = Hours(i)\
+\}\
+\
+println(2 seconds)\
+println(3 minutes)\
+println(4 hours)\cf0 \
+\pard\tx566\pardeftab720\sl500
+
+\f4\fs32 \cf5 \cb1 \
+redid pool \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f2\fs36 \cf2 \cb3 \CocoaLigature0 object RedisPoolManager\{\
+  private[this] val redisPool=\{\
+    val config=new JedisPoolConfig\
+    config.setMaxTotal(500)\
+    config.setMaxIdle(5)\
+    config.setMaxWaitMillis(1000*10)\
+    config.setTestOnBorrow(true)\
+    new JedisPool(config,"localhost",6379)\
+  \}\
+	def redisCommand[T](f:Jedis=>T): T =\{\
+    val client=redisPool.getResource\
+    try\{\
+      f(client)\
+    \}finally \{\
+      redisPool.returnBrokenResource(client)\
+    \}\
+  \}\
+\}\
+object Test\{\
+  def main(args:Array[String]): Unit =\{\
+    val max_valid_request_frequency=10\
+    val max_valid_request_expire_seconds=10\
+    RedisPoolManager.redisCommand\{implicit client=> 
+\f0 //\'b4\'cb\'b4\'a6implicit\'b5\'c4\'d7\'f7\'d3\'c3,client\'b5\'c4\'d6\'b5\'ce\'aa\'d2\'fe\'ca\'bd\'b5\'c4 \'bf\'c9\'d2\'d4\'d0\'b4\'b3\'c9 client:Jedis\'b4\'fa\'cc\'e6
+\f2 \
+      val key="h_type_uid_cid"\
+      val count=client.incr(key)\
+      if(count>max_valid_request_frequency) true\
+      else \{\
+        if(count == 1) client.expire(key,max_valid_request_expire_seconds)\
+        false\
+      \}\
+      println(client.set("key1","value1"))\
+      println(client.set("key1","value1"))\
+    \}\
+  \}\
+\}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f4\fs32 \cf5 \cb1 \CocoaLigature1 \
+\pard\tx566\pardeftab720\sl500
+\cf5 finagle trace({\field{\*\fldinst{HYPERLINK "http://blog.oskarsson.nu/post/40196324612/the-twitter-stack"}}{\fldrslt http://blog.oskarsson.nu/post/40196324612/the-twitter-stack}})\
+\
+\
+docker\
+deploy distributed system {\field{\*\fldinst{HYPERLINK "http://blog.blikk.co/build-deploy-distributed-scala-apps-akka-docker-coreos/"}}{\fldrslt http://blog.blikk.co/build-deploy-distributed-scala-apps-akka-docker-coreos/}}\
+docker webui manager shipyard {\field{\*\fldinst{HYPERLINK "http://vmking.blog.51cto.com/6433018/1537330"}}{\fldrslt http://vmking.blog.51cto.com/6433018/1537330}}\
+\
+apache mesos\
+\pard\pardeftab720\sl480
+{\field{\*\fldinst{HYPERLINK "http://www.jdon.com/artichect/managing-docker-clusters-using-mesos-and-marathon.html"}}{\fldrslt 
+\f1\fs28 \cf30 \cb31 http://www.jdon.com/artichect/managing-docker-clusters-using-mesos-and-marathon.html}}\
+\pard\tx566\pardeftab720\sl500
+\cf5 \
 }
