@@ -2,9 +2,7 @@ package cn.changhong.web.router
 
 import cn.changhong.web.util.Parser.ObjectToJsonStringToChannelBuffer
 import cn.changhong.web.util._
-import com.twitter.finagle.Service
 import com.twitter.finagle.http.Response
-import com.twitter.util.Future
 import org.jboss.netty.handler.codec.http.{HttpResponse}
 import org.slf4j.LoggerFactory
 

@@ -9,7 +9,7 @@
 \red24\green32\blue123;\red143\green143\blue143;\red246\green246\blue246;\red74\green74\blue74;\red225\green223\blue212;
 \red10\green82\blue135;\red0\green0\blue255;\red18\green139\blue2;\red15\green114\blue1;\red109\green109\blue109;
 \red0\green61\blue204;\red83\green83\blue83;\red105\green105\blue105;\red19\green73\blue175;\red242\green242\blue242;
-\red38\green38\blue38;\red255\green255\blue255;\red53\green53\blue53;\red243\green88\blue93;}
+\red53\green53\blue53;\red243\green88\blue93;\red254\green73\blue64;}
 {\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
 {\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
 {\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
@@ -23,7 +23,7 @@
 {\list\listtemplateid11\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}.}{\leveltext\leveltemplateid1001\'01.;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid11}
 {\list\listtemplateid12\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid12}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}{\listoverride\listid9\listoverridecount0\ls9}{\listoverride\listid10\listoverridecount0\ls10}{\listoverride\listid11\listoverridecount0\ls11}{\listoverride\listid12\listoverridecount0\ls12}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15060\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh14840\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
 \f0\fs24 \cf0 \'b7\'fe\'ce\'f1\'c6\'f7\'b6\'cb\'ca\'da\'c8\'a8\
@@ -3222,7 +3222,8 @@ class BusImpl extends IBusface with SoaTrace\{\
 \}\
 implicit 
 \f0 \'d2\'fe\'ca\'bd\'c0\'e0\'d0\'cd\'d7\'aa\'bb\'bb\
-{\field{\*\fldinst{HYPERLINK "http://meetfp.com/zh/blog/implicit"}}{\fldrslt http://meetfp.com/zh/blog/implicit}}
+\pard\tx566\pardeftab720\sl500
+{\field{\*\fldinst{HYPERLINK "http://meetfp.com/zh/blog/implicit"}}{\fldrslt \cf5 http://meetfp.com/zh/blog/implicit}}
 \f4 \
 \pard\pardeftab720\sl400
 
@@ -3292,8 +3293,8 @@ docker webui manager shipyard {\field{\*\fldinst{HYPERLINK "http://vmking.blog.5
 apache mesos\
 \pard\pardeftab720\sl480
 {\field{\*\fldinst{HYPERLINK "http://www.jdon.com/artichect/managing-docker-clusters-using-mesos-and-marathon.html"}}{\fldrslt 
-\f1\fs28 \cf30 \cb31 http://www.jdon.com/artichect/managing-docker-clusters-using-mesos-and-marathon.html}}
-\f1\fs28 \cf30 \cb31 \
+\f1\fs28 \cf5 http://www.jdon.com/artichect/managing-docker-clusters-using-mesos-and-marathon.html}}
+\f1\fs28 \
 \
 start CLI\
 1.
@@ -3302,13 +3303,15 @@ start CLI\
 bin/mesos-master.sh \'97ip=10.9.52.31 \'97zk=zk://localhost:2181/mesos \'97work_dir=/tmp/mesos/master \'97log_dir=/tmp/mesos/master/log \'97
 \f2\fs36 \cf2 \cb3 \CocoaLigature0 quorum=1\
 bin/mesos-slaver.sh \'97master=zk://localhost:2181/mesos \'97work_dir=/tmp/mesos/slaver \'97log_dir=/tmp/mesos/slaver/log \'97quorum=1  \'97containerizers=docker,mesos\
+\pard\pardeftab720\sl480
 
-\f1\fs28 \cf30 \cb31 \CocoaLigature1 2.
+\f1\fs28 \cf5 \cb1 \CocoaLigature1 2.
 \f0 \'c6\'f4\'b6\'af
 \f1 marathon\
 bin/start \'97master zk://localhost:2181/mesos \'97zk zk://localhost:2181/marathon\
 deploy docker containers on mesos use marathon\
-{\field{\*\fldinst{HYPERLINK "http://frankhinek.com/deploy-docker-containers-on-mesos-0-20/"}}{\fldrslt http://frankhinek.com/deploy-docker-containers-on-mesos-0-20/}}\
+\pard\pardeftab720\sl480
+{\field{\*\fldinst{HYPERLINK "http://frankhinek.com/deploy-docker-containers-on-mesos-0-20/"}}{\fldrslt \cf5 http://frankhinek.com/deploy-docker-containers-on-mesos-0-20/}}\
 {\field{\*\fldinst{HYPERLINK "https://github.com/ceteri/exelixi/wiki/Mesos-Tutorial:-Fog-Computing-at-Hella-Scale"}}{\fldrslt https://github.com/ceteri/exelixi/wiki/Mesos-Tutorial:-Fog-Computing-at-Hella-Scale}}\
 \
 {\field{\*\fldinst{HYPERLINK "http://codefutures.com/mesos-docker-tutorial-how-to-build-your-own-framework/"}}{\fldrslt http://codefutures.com/mesos-docker-tutorial-how-to-build-your-own-framework/}} (
@@ -3326,7 +3329,7 @@ mesos two-level scheduler abstraction\
 {\field{\*\fldinst{HYPERLINK "https://zcox.wordpress.com/2014/09/17/cpu-resources-in-docker-mesos-and-marathon/"}}{\fldrslt https://zcox.wordpress.com/2014/09/17/cpu-resources-in-docker-mesos-and-marathon/}}\
 haproxy TCP
 \f0 \'b8\'ba\'d4\'d8\'be\'f9\'ba\'e2
-\f4\fs32 \cf5 \cb1 \
+\f4\fs32 \
 \pard\tx566\pardeftab720\sl500
 \cf5 \
 \pard\pardeftab720
@@ -3351,28 +3354,29 @@ haproxy TCP
 \f0 \'c3\'eb\'a1\'a3\'cb\'fc\'ca\'c7\'c8\'ed\'bc\'fe\'b2\'e2\'ca\'d4\'bd\'e1\'b9\'fb\'b5\'c4\'b2\'e2\'c1\'bf\'b5\'a5\'ce\'bb\'a1\'a3\'d2\'bb\'b8\'f6\'ca\'c2\'ce\'f1\'ca\'c7\'d6\'b8\'d2\'bb\'b8\'f6\'bf\'cd\'bb\'a7\'bb\'fa\'cf\'f2\'b7\'fe\'ce\'f1\'c6\'f7\'b7\'a2\'cb\'cd\'c7\'eb\'c7\'f3\'c8\'bb\'ba\'f3\'b7\'fe\'ce\'f1\'c6\'f7\'d7\'f6\'b3\'f6\'b7\'b4\'d3\'a6\'b5\'c4\'b9\'fd\'b3\'cc\'a1\'a3\'bf\'cd\'bb\'a7\'bb\'fa\'d4\'da\'b7\'a2\'cb\'cd\'c7\'eb\'c7\'f3\'ca\'b1\'bf\'aa\'ca\'bc\'bc\'c6\'ca\'b1\'a3\'ac\'ca\'d5\'b5\'bd\'b7\'fe\'ce\'f1\'c6\'f7\'cf\'ec\'d3\'a6\'ba\'f3\'bd\'e1\'ca\'f8\'bc\'c6\'ca\'b1\'a3\'ac\'d2\'d4\'b4\'cb\'c0\'b4\'bc\'c6\'cb\'e3\'ca\'b9\'d3\'c3\'b5\'c4\'ca\'b1\'bc\'e4\'ba\'cd\'cd\'ea\'b3\'c9\'b5\'c4\'ca\'c2\'ce\'f1\'b8\'f6\'ca\'fd\'a3\'ac\'d7\'ee\'d6\'d5\'c0\'fb\'d3\'c3\'d5\'e2\'d0\'a9\'d0\'c5\'cf\'a2\'c0\'b4\'b9\'c0\'bc\'c6\'b5\'c3\'b7\'d6\'a1\'a3\'bf\'cd\'bb\'a7\'bb\'fa\'ca\'b9\'d3\'c3\'bc\'d3\'c8\'a8\'d0\'ad\'ba\'af\'ca\'fd\'c6\'bd\'be\'f9\'b7\'bd\'b7\'a8\'c0\'b4\'bc\'c6\'cb\'e3\'bf\'cd\'bb\'a7\'bb\'fa\'b5\'c4\'b5\'c3\'b7\'d6\'a3\'ac\'b2\'e2\'ca\'d4\'c8\'ed\'bc\'fe\'be\'cd\'ca\'c7\'c0\'fb\'d3\'c3\'bf\'cd\'bb\'a7\'bb\'fa\'b5\'c4\'d5\'e2\'d0\'a9\'d0\'c5\'cf\'a2\'ca\'b9\'d3\'c3\'bc\'d3\'c8\'a8\'d0\'ad\'ba\'af\'ca\'fd\'c6\'bd\'be\'f9\'b7\'bd\'b7\'a8\'c0\'b4\'bc\'c6\'cb\'e3\'b7\'fe\'ce\'f1\'c6\'f7\'b6\'cb\'b5\'c4\'d5\'fb\'cc\'e5
 \f3 TPS
 \f0 \'b5\'c3\'b7\'d6\'a1\'a3
-\f4\fs32 \cf5 \
+\f4\fs32 \
 \
 \
 comet server\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
 \f1\fs24 \cf0 {{\NeXTGraphic 1__#$!@%!#__Pasted Graphic.tiff \width14520 \height9880
-}¬}
-\f4\fs32 \
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f4\fs32 \cf0 \
 \pard\pardeftab720\sl480
 
-\f0\fs28 \cf32 \cb31 \'c7\'b0\'d1\'d4
+\f0\fs28 \cf30 \'c7\'b0\'d1\'d4
 \f10 \
 \pard\pardeftab720\sl480
-{\field{\*\fldinst{HYPERLINK "https://github.com/Terry-Mao/gopush-cluster/"}}{\fldrslt \cf33 \ul \ulc33 gopush-cluster}}
+{\field{\*\fldinst{HYPERLINK "https://github.com/Terry-Mao/gopush-cluster/"}}{\fldrslt \cf31 \ul \ulc31 gopush-cluster}}
 \f0 \'ca\'c7\'d2\'bb\'cc\'d7
 \f10 golang
 \f0 \'bf\'aa\'b7\'a2\'b5\'c4\'ca\'b5\'ca\'b1\'cf\'fb\'cf\'a2\'cd\'c6\'cb\'cd\'bc\'af\'c8\'ba\'a3\'ac\'d6\'f7\'d2\'aa\'b7\'d6\'cf\'ed\'d2\'bb\'cf\'c2\'bf\'aa\'b7\'a2\'d5\'e2\'cc\'d7\'cf\'b5\'cd\'b3\'b5\'c4\'cf\'eb\'b7\'a8\'ba\'cd\'cb\'bc\'c2\'b7\'a1\'a3
 \f10 \
 \pard\pardeftab720\sl480
 
-\f0 \cf32 \'bc\'dc\'b9\'b9
+\f0 \cf30 \'bc\'dc\'b9\'b9
 \f10 \
 
 \f0 \'d6\'f7\'d2\'aa\'b7\'d6\'ce\'aa\'c8\'fd\'b8\'f6\'c4\'a3\'bf\'e9\'c0\'b4\'bf\'aa\'b7\'a2\'a3\'ac
@@ -3438,7 +3442,7 @@ web\
 \f0 \'b7\'a2\'cb\'cd\'b8\'f8
 \f10 message
 \f0 \'c4\'a3\'bf\'e9\'b5\'c4\'a3\'ac\'be\'a1\'c1\'bf\'b5\'c4\'d6\'b0\'d4\'f0\'b5\'a5\'d2\'bb
-\f4\fs32 \cf5 \cb1 \
+\f4\fs32 \cf5 \
 \pard\pardeftab720
 \cf5 ({\field{\*\fldinst{HYPERLINK "http://www.ibm.com/developerworks/cn/web/wa-cometjava/"}}{\fldrslt http://www.ibm.com/developerworks/cn/web/wa-cometjava/}})\
 http://www.cnblogs.com/bhtfg538/p/3585406.html\
@@ -3449,8 +3453,9 @@ https://github.com/Terry-Mao/gopush-cluster/\
 \
 \
 MQ \
+\pard\pardeftab720
 {\field{\*\fldinst{HYPERLINK "http://blog.csdn.net/sunxinhere/article/details/7968886"}}{\fldrslt 
-\b http://blog.csdn.net/sunxinhere/article/details/7968886}}
+\b \cf5 http://blog.csdn.net/sunxinhere/article/details/7968886}}
 \b  
 \f0 \'b8\'f7\'d6\'d6
 \f4 MQ
@@ -3461,14 +3466,86 @@ apache mesos \
 1.\'b0\'b2\'d7\'b0
 \b0 \'ce\'ca\'cc\'e2
 \f4 \
-{\field{\*\fldinst{HYPERLINK "http://blog.csdn.net/ys901019_sunny/article/details/18310315"}}{\fldrslt http://blog.csdn.net/ys901019_sunny/article/details/18310315}}\
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://blog.csdn.net/ys901019_sunny/article/details/18310315"}}{\fldrslt \cf5 http://blog.csdn.net/ys901019_sunny/article/details/18310315}}\
 \
 \pard\pardeftab720
 {\field{\*\fldinst{HYPERLINK "https://github.com/GoogleCloudPlatform/kubernetes"}}{\fldrslt \cf5 kubernetes}} 
-\f0\fs28 \cf30 \cb31 google\'d4\'c6\'bf\'f2\'bc\'dc
-\f4\fs32 \cf5 \cb1 \
-\pard\pardeftab720
-{\field{\*\fldinst{HYPERLINK "https://github.com/GoogleCloudPlatform/kubernetes"}}{\fldrslt \cf5 https://github.com/GoogleCloudPlatform/kubernetes}}\
+\f0\fs28 google\'d4\'c6\'bf\'f2\'bc\'dc
+\f4\fs32 \
+{\field{\*\fldinst{HYPERLINK "https://github.com/GoogleCloudPlatform/kubernetes"}}{\fldrslt https://github.com/GoogleCloudPlatform/kubernetes}}\
 \
+\
+\
+scala 
+\f0 \'ca\'b9\'d3\'c3\'cc\'d8\'d6\'ca\'ca\'b5\'cf\'d6AOP\
+object AopTest \{\
+  def main(args:Array[String]): Unit =\{\
+    BusService("hello world")\
+  \}\
+\}\
+\
+\
+trait Service\{\
+  def apply(str:String):String\
+\}\
+trait ForeService extends Service\{\
+  \cf12 abstract override\cf5  def apply(str:String):String=\{\
+    println("ForeService Start...")\
+    val res=super.apply(str)\
+    println("ForeService End...")\
+    res\
+  \}\
+\}\
+trait LogService extends Service\{\
+  abstract override  def apply(str:String):String=\{\
+    println("LogService Start...")\
+    val res=super.apply(str)\
+    println("LogService End...")\
+    res\
+  \}\
+\}\
+object BusService extends BusService with ForeService with LogService\
+class BusService extends Service \{\
+  override def apply(str:String):String=\{\
+    println(s"request=$str")\
+    ""\
+  \}\
+\}\
+slick \'b7\'b5\'bb\'d8\'d7\'d4\'b6\'a8\'d2\'e5\'c0\'e0\'d0\'cd\
+object ResultMap extends GetResult[Map[String,Any]] \{\
+    def apply(pr: PositionedResult) = \{\
+      val rs = pr.rs // <- jdbc result set//\'b4\'e6\'b4\'a2\'ca\'fd\'be\'dd\
+      val md = rs.getMetaData();\'b4\'e6\'b4\'a2\'c1\'d0\'c3\'fb\
+      val res = (1 to pr.numColumns).map \{ i => md.getColumnName(i) -> rs.getObject(i)\}.toMap\
+      res\
+    \}\
+  \}\
+\pard\pardeftab720
+
+\f4 \cf5 def Sql=\{\
+   SlickDBPoolManager.DBPool.withSession \{ implicit session =>\
+    sql"select username,password from user".as(\cf12 ResultMap\cf5 ).list\
+   \}\
+ \}\
+{\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/20364790/slick-how-to-get-rows-without-knowing-number-of-columns"}}{\fldrslt http://stackoverflow.com/questions/20364790/slick-how-to-get-rows-without-knowing-number-of-columns}}\
+slick 
+\f0 \'b6\'af\'cc\'ac
+\f4 sql{\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/27329185/how-to-write-dynamic-sql-queries-with-sql-interpolation-in-slick"}}{\fldrslt http://stackoverflow.com/questions/27329185/how-to-write-dynamic-sql-queries-with-sql-interpolation-in-slick}}\
+\pard\pardeftab720
+
+\f0 \cf5 \'ca\'b9\'d3\'c3
+\f4 #
+\f0 $
+\f4 \
+def Sql=\{\
+   val columns="id,username,password"\
+   val list=List(1,2,3,4).mkString(",")\
+   SlickDBPoolManager.DBPool.withSession \{ implicit session =>\
+\
+     sql"""select \cf32 #$\cf5 columns from user where id in (#$list)""".as(SlickResultMap).list\
+\
+   \}\
+ \}\
 \
 }
