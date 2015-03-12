@@ -23,7 +23,7 @@
 {\list\listtemplateid11\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}.}{\leveltext\leveltemplateid1001\'01.;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid11}
 {\list\listtemplateid12\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid12}}
 {\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}{\listoverride\listid9\listoverridecount0\ls9}{\listoverride\listid10\listoverridecount0\ls10}{\listoverride\listid11\listoverridecount0\ls11}{\listoverride\listid12\listoverridecount0\ls12}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh7400\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww25320\viewh15320\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
 \f0\fs24 \cf0 \'b7\'fe\'ce\'f1\'c6\'f7\'b6\'cb\'ca\'da\'c8\'a8\
@@ -519,7 +519,7 @@ master \
 \f0 \cf5 \'b7\'c0\'d6\'b9\'c5\'c0\'b3\'e6\'b9\'a5\'bb\'f7\'bb\'f2\'d5\'dfDDos\'b9\'a5\'bb\'f7\'cb\'bc\'c2\'b7\
 \'b7\'fe\'ce\'f1\'c6\'f7\'b6\'cb\'c7\'bf\'d6\'c6\'d1\'e9\'d6\'a4\'c7\'eb\'c7\'f3\'b6\'cb\'b5\'c4\'ca\'fd\'be\'dd[\cf11 requestId\cf5 (\'b7\'fe\'ce\'f1\'c6\'f7\'b6\'cb\'c3\'bf\'b4\'ce\'c9\'fa\'b3\'c9),\cf12 clientId\cf5 (\'bf\'cd\'b7\'fe\'b6\'cb\'d6\'d5\'b6\'cb\'cf\'e0\'b9\'d8),\cf11 userId\cf5 (\'d7\'a2\'b2\'e1\'d5\'cb\'bb\'a7\'ca\'b1\'c9\'fa\'b3\'c9),\cf12 ip\cf5 (\'bf\'cd\'b7\'fe\'b6\'cb\'b5\'c4IP\'b5\'d8\'d6\'b7),method(\'c7\'eb\'c7\'f3\'b5\'c4\'b7\'bd\'b7\'a8),\cf11 startTime\cf5 (\'ca\'d5\'b5\'bd\'c7\'eb\'c7\'f3\'bf\'aa\'ca\'bc\'b4\'a6\'c0\'ed\'b5\'c4\'ca\'b1\'bc\'e4),\cf12 endTime\cf8 (\'b7\'fe\'ce\'f1\'c6\'f7\'b6\'cb\'b4\'a6\'c0\'ed\'cd\'ea\'b5\'b1\'c7\'b0\'c7\'eb\'c7\'f3\'b5\'c4\'ca\'b1\'bc\'e4)\cf5 ]\
 \'b7\'fe\'ce\'f1\'c6\'f7\'b6\'cb\'ce\'aa\'c3\'bf\'b4\'ce\'c7\'eb\'c7\'f3\'c9\'e8\'d6\'c3\'d2\'bb\'b8\'f6\'ba\'cf\'c0\'ed\'b5\'c4\'ca\'b1\'bc\'e4\'b4\'c1\'b7\'b6\'ce\'a7\'a3\'ac\'c8\'e7\'b9\'fb\'bf\'cd\'b7\'fe\'b6\'cb\'d4\'da\'d5\'e2\'b8\'f6\'ca\'b1\'bc\'e4\'b4\'c1\'c4\'da\'c6\'b5\'b7\'b1\'b5\'f7\'d3\'c3\'bd\'d3\'bf\'da\'a3\'ac\'be\'cd\'c8\'cf\'ce\'aa\'bf\'cd\'b7\'fe\'b6\'cb\'b4\'e6\'d4\'da\'b9\'a5\'bb\'f7
-\f4 \cf5 \
+\f4 \
 \pard\tx566\pardeftab720\sl500
 \cf5 the loadbalancer stack:balances requests across multiple endpoints\
 the endpoint stack:provides failure management and connection pooling\
@@ -674,12 +674,15 @@ object Server \{\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
 \f2\fs36 \cf2 \cb3 \CocoaLigature0 .libs/ThriftTest_constants.o: No such file or directory\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
-\f0 \'b5\'da\'d2\'bb\'d6\'d6\'b7\'bd\'b7\'a8 \'bc\'d3\'c9\'cf\'a1\'aawithout-tests\
+\f0 \cf2 \'b5\'da\'d2\'bb\'d6\'d6\'b7\'bd\'b7\'a8 \'bc\'d3\'c9\'cf\'a1\'aawithout-tests\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
-\f2 ./configure --prefix=/usr/local/thrift --with-boost=/usr/local/boost --with-java=no  --with-erlang=no  --with-perl=no  --with-php=no  --with-ruby=no --with-csharp=no --disable-static --without-tests\
+\f2 \cf2 ./configure --prefix=/usr/local/thrift --with-boost=/usr/local/boost --with-java=no  --with-erlang=no  --with-perl=no  --with-php=no  --with-ruby=no --with-csharp=no --disable-static --without-tests\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
-\f0 \'b5\'da\'b6\'fe\'d6\'d6\'b7\'bd\'b7\'a8
+\f0 \cf2 \'b5\'da\'b6\'fe\'d6\'d6\'b7\'bd\'b7\'a8
 \f2 \
 
 \f0 \'b8\'b4\'d6\'c6
@@ -3216,10 +3219,14 @@ class Method1 extends ((String) =>String) with ((String,String)=>Unit)\{\
 \
 \
 \
-trait SoaTrace\{self=>\
+trait SoaTrace\{self=>//
+\f0 \'b4\'fa\'b1\'ed\'b1\'be\'c9\'ed\'ca\'b5\'c0\'fd\'bb\'af\'b6\'d4\'cf\'f3\'d3\'ebthis\'cf\'e0\'cd\'ac
+\f4 \
   def apply():Unit\
 \}\
-trait IBusface\{ trace:SoaTrace =>\
+trait IBusface\{ trace:SoaTrace =>
+\f0 //\'bc\'cc\'b3\'d0\'b6\'d4\'cf\'f3\'b1\'d8\'d0\'eb\'ca\'b5\'cf\'d6SoaTrace\'bd\'d3\'bf\'da
+\f4 \
   def test(s:String):Unit\
   \
 \}\
@@ -3228,6 +3235,7 @@ class BusImpl extends IBusface with SoaTrace\{\
 \
   override def apply: Unit = ???\
 \}\
+\
 implicit 
 \f0 \'d2\'fe\'ca\'bd\'c0\'e0\'d0\'cd\'d7\'aa\'bb\'bb\
 \pard\tx566\pardeftab720\sl500
@@ -3328,15 +3336,18 @@ deploy docker containers on mesos use marathon\
 \f0 \'bf\'bf\'c6\'d7
 \f1 )\
 \
-{\field{\*\fldinst{HYPERLINK "http://mesosphere.com/docs/tutorials/"}}{\fldrslt http://mesosphere.com/docs/tutorials/}}  demo\
-{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=vtnSL79rZ6o"}}{\fldrslt https://www.youtube.com/watch?v=vtnSL79rZ6o}} docker clustering deploy\
+\pard\pardeftab720\sl480
+{\field{\*\fldinst{HYPERLINK "http://mesosphere.com/docs/tutorials/"}}{\fldrslt \cf5 http://mesosphere.com/docs/tutorials/}}  demo\
+\pard\pardeftab720\sl480
+{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=vtnSL79rZ6o"}}{\fldrslt \cf5 https://www.youtube.com/watch?v=vtnSL79rZ6o}} docker clustering deploy\
 \
 mesos two-level scheduler abstraction\
 1. a scheduler with receives resources offers from mesos\
 2.a set of executors with distribute the data+processing\
 \
 \
-{\field{\*\fldinst{HYPERLINK "https://zcox.wordpress.com/2014/09/17/cpu-resources-in-docker-mesos-and-marathon/"}}{\fldrslt https://zcox.wordpress.com/2014/09/17/cpu-resources-in-docker-mesos-and-marathon/}}\
+\pard\pardeftab720\sl480
+{\field{\*\fldinst{HYPERLINK "https://zcox.wordpress.com/2014/09/17/cpu-resources-in-docker-mesos-and-marathon/"}}{\fldrslt \cf5 https://zcox.wordpress.com/2014/09/17/cpu-resources-in-docker-mesos-and-marathon/}}\
 haproxy TCP
 \f0 \'b8\'ba\'d4\'d8\'be\'f9\'ba\'e2
 \f4\fs32 \
@@ -3364,7 +3375,7 @@ haproxy TCP
 \f0 \'c3\'eb\'a1\'a3\'cb\'fc\'ca\'c7\'c8\'ed\'bc\'fe\'b2\'e2\'ca\'d4\'bd\'e1\'b9\'fb\'b5\'c4\'b2\'e2\'c1\'bf\'b5\'a5\'ce\'bb\'a1\'a3\'d2\'bb\'b8\'f6\'ca\'c2\'ce\'f1\'ca\'c7\'d6\'b8\'d2\'bb\'b8\'f6\'bf\'cd\'bb\'a7\'bb\'fa\'cf\'f2\'b7\'fe\'ce\'f1\'c6\'f7\'b7\'a2\'cb\'cd\'c7\'eb\'c7\'f3\'c8\'bb\'ba\'f3\'b7\'fe\'ce\'f1\'c6\'f7\'d7\'f6\'b3\'f6\'b7\'b4\'d3\'a6\'b5\'c4\'b9\'fd\'b3\'cc\'a1\'a3\'bf\'cd\'bb\'a7\'bb\'fa\'d4\'da\'b7\'a2\'cb\'cd\'c7\'eb\'c7\'f3\'ca\'b1\'bf\'aa\'ca\'bc\'bc\'c6\'ca\'b1\'a3\'ac\'ca\'d5\'b5\'bd\'b7\'fe\'ce\'f1\'c6\'f7\'cf\'ec\'d3\'a6\'ba\'f3\'bd\'e1\'ca\'f8\'bc\'c6\'ca\'b1\'a3\'ac\'d2\'d4\'b4\'cb\'c0\'b4\'bc\'c6\'cb\'e3\'ca\'b9\'d3\'c3\'b5\'c4\'ca\'b1\'bc\'e4\'ba\'cd\'cd\'ea\'b3\'c9\'b5\'c4\'ca\'c2\'ce\'f1\'b8\'f6\'ca\'fd\'a3\'ac\'d7\'ee\'d6\'d5\'c0\'fb\'d3\'c3\'d5\'e2\'d0\'a9\'d0\'c5\'cf\'a2\'c0\'b4\'b9\'c0\'bc\'c6\'b5\'c3\'b7\'d6\'a1\'a3\'bf\'cd\'bb\'a7\'bb\'fa\'ca\'b9\'d3\'c3\'bc\'d3\'c8\'a8\'d0\'ad\'ba\'af\'ca\'fd\'c6\'bd\'be\'f9\'b7\'bd\'b7\'a8\'c0\'b4\'bc\'c6\'cb\'e3\'bf\'cd\'bb\'a7\'bb\'fa\'b5\'c4\'b5\'c3\'b7\'d6\'a3\'ac\'b2\'e2\'ca\'d4\'c8\'ed\'bc\'fe\'be\'cd\'ca\'c7\'c0\'fb\'d3\'c3\'bf\'cd\'bb\'a7\'bb\'fa\'b5\'c4\'d5\'e2\'d0\'a9\'d0\'c5\'cf\'a2\'ca\'b9\'d3\'c3\'bc\'d3\'c8\'a8\'d0\'ad\'ba\'af\'ca\'fd\'c6\'bd\'be\'f9\'b7\'bd\'b7\'a8\'c0\'b4\'bc\'c6\'cb\'e3\'b7\'fe\'ce\'f1\'c6\'f7\'b6\'cb\'b5\'c4\'d5\'fb\'cc\'e5
 \f3 TPS
 \f0 \'b5\'c3\'b7\'d6\'a1\'a3
-\f4\fs32 \cf5 \
+\f4\fs32 \
 \
 \
 comet server\
@@ -3454,7 +3465,7 @@ web\
 \f0 \'c4\'a3\'bf\'e9\'b5\'c4\'a3\'ac\'be\'a1\'c1\'bf\'b5\'c4\'d6\'b0\'d4\'f0\'b5\'a5\'d2\'bb
 \f4\fs32 \cf5 \
 \pard\pardeftab720
-\cf5 ({\field{\*\fldinst{HYPERLINK "http://www.ibm.com/developerworks/cn/web/wa-cometjava/"}}{\fldrslt \cf5 http://www.ibm.com/developerworks/cn/web/wa-cometjava/}})\
+\cf5 ({\field{\*\fldinst{HYPERLINK "http://www.ibm.com/developerworks/cn/web/wa-cometjava/"}}{\fldrslt http://www.ibm.com/developerworks/cn/web/wa-cometjava/}})\
 http://www.cnblogs.com/bhtfg538/p/3585406.html\
 http://www.tuicool.com/articles/me6rIrb\
 https://github.com/Terry-Mao/gopush-cluster/\
@@ -3466,7 +3477,7 @@ MQ \
 \pard\pardeftab720
 {\field{\*\fldinst{HYPERLINK "http://blog.csdn.net/sunxinhere/article/details/7968886"}}{\fldrslt 
 \b \cf5 http://blog.csdn.net/sunxinhere/article/details/7968886}}
-\b \cf5  
+\b  
 \f0 \'b8\'f7\'d6\'d6
 \f4 MQ
 \f0 \'bd\'e9\'c9\'dc\
@@ -3474,16 +3485,16 @@ MQ \
 \
 apache mesos \
 1.\'b0\'b2\'d7\'b0
-\b0 \cf5 \'ce\'ca\'cc\'e2
+\b0 \'ce\'ca\'cc\'e2
 \f4 \
 \pard\pardeftab720
 {\field{\*\fldinst{HYPERLINK "http://blog.csdn.net/ys901019_sunny/article/details/18310315"}}{\fldrslt \cf5 http://blog.csdn.net/ys901019_sunny/article/details/18310315}}\
 \
 \pard\pardeftab720
 {\field{\*\fldinst{HYPERLINK "https://github.com/GoogleCloudPlatform/kubernetes"}}{\fldrslt \cf5 kubernetes}} 
-\f0\fs28 \cf5 google\'d4\'c6\'bf\'f2\'bc\'dc
-\f4\fs32 \cf5 \
-{\field{\*\fldinst{HYPERLINK "https://github.com/GoogleCloudPlatform/kubernetes"}}{\fldrslt \cf5 https://github.com/GoogleCloudPlatform/kubernetes}}\
+\f0\fs28 google\'d4\'c6\'bf\'f2\'bc\'dc
+\f4\fs32 \
+{\field{\*\fldinst{HYPERLINK "https://github.com/GoogleCloudPlatform/kubernetes"}}{\fldrslt https://github.com/GoogleCloudPlatform/kubernetes}}\
 \
 \
 \
@@ -3542,7 +3553,7 @@ object ResultMap extends GetResult[Map[String,Any]] \{\
 {\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/20364790/slick-how-to-get-rows-without-knowing-number-of-columns"}}{\fldrslt \cf5 http://stackoverflow.com/questions/20364790/slick-how-to-get-rows-without-knowing-number-of-columns}}\
 slick 
 \f0 \'b6\'af\'cc\'ac
-\f4 sql{\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/27329185/how-to-write-dynamic-sql-queries-with-sql-interpolation-in-slick"}}{\fldrslt \cf5 http://stackoverflow.com/questions/27329185/how-to-write-dynamic-sql-queries-with-sql-interpolation-in-slick}}\
+\f4 sql{\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/27329185/how-to-write-dynamic-sql-queries-with-sql-interpolation-in-slick"}}{\fldrslt http://stackoverflow.com/questions/27329185/how-to-write-dynamic-sql-queries-with-sql-interpolation-in-slick}}\
 \pard\pardeftab720
 
 \f0 \cf5 \'ca\'b9\'d3\'c3
@@ -3562,8 +3573,46 @@ def Sql=\{\
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
 \f2\fs36 \cf2 \cb3 \CocoaLigature0 FROM fastdfs:1\
-ENTRYPOINT /usr/local/bin/fdfs_trackerd /home/conf/tracker.conf
+ENTRYPOINT /usr/local/bin/fdfs_trackerd /home/conf/tracker.conf\
+\
+\
+\
+\
+\
+\pard\pardeftab720
+
 \f4\fs32 \cf5 \cb1 \CocoaLigature1 \
+rdd \
+a list of partitions\
+a function for computing each split\
+a list of dependencies on other RDDs\
+Optionally, a Partitioner for key-value RDDs (e.g to say that the RDD is hash-partitioned)\
+Optionally,a list of preferred locations to compute each split on(e.g block locations for an HDFS file)\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1\fs24 \cf0 {{\NeXTGraphic 2__#$!@%!#__Pasted Graphic.tiff \width18600 \height13980
+}¬}
+\f4\fs32 \
+\
+
+\f0 \'bc\'b8\'d6\'d6\'c6\'ab\'ba\'af\'ca\'fd\'b5\'c4\'ca\'b5\'cf\'d6\'b7\'bd\'ca\'bd\
+
+\f4 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf0     type optype=(String)=>Unit\
+    def impl(s:String,fn:optype)=fn(s)\
+\
+    impl("Out Stream",\{implicit s=>\
+      println(s)\
+    \})\
+    impl("Out Stream",\{\
+      case s=>println(s)\
+    \})\
+    impl("Out Stream",\{s:String=>\
+      println(s)\
+    \})\cf5 \
 \pard\pardeftab720
 \cf5 \
 }
