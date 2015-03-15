@@ -16,7 +16,11 @@ object demo{
     val numAs=logData.filter(line=>line.contains("a")).count()
     val numBs=logData.filter(line=>line.contains("b")).count()
     val lineN=logData.count()
+
     logData.map{s=>s.map(c=>(c->1))}.flatMap(l=>l).reduceByKey(_+_).sortByKey(true)
     println(s"Total lines : $lineN,Lines with a: $numAs,Lines with b: $numBs")
+    val conf1=new SparkConf().setAppName("Simple Application").setMaster("spark://localhost:7077")
+    val sc1=new SparkContext("local","wordcount")
+    val logData1=sc1.textFile(logFile,2).cache()
   }
 }
