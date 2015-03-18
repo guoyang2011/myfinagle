@@ -81,49 +81,47 @@ object ConferenceTrackManagementSolution {
      * @param pmTime (下午可用于安排任务最大时间,根据下午可调节时间)
      * @return
      */
-    def scheduleDailyTask(amTime: Int = 3 * 60, pmTime: (Int, Int) = (4 * 60, 60)) = {
+    def scheduleDailyTask(amTime: (Int,Int) = (3 * 60,0), pmTime: (Int, Int) = (4 * 60, 60)) = {
       var dailySchedule: DailyTask[K] = List()
-
       var tempTasks: List[Task[K]] = List()
-
+      var cFactor=amTime._2//上午的收敛因子
       /**
-       *
+       * 问题分析，此问题为双排列组合问题，在不考虑排序问题的情况下，先对上午的进行排序,满足要求的组合为am=C(19,x1),满足下午要求的排列组合为pm=C(19-x1,x2),最终满足要求的排列组合为am*pm
        * @param remainedTime 迭代计算中剩余时间
        * @param remainTasks 迭代计算中剩余为安排的任务
        * @param scheduleTasked 迭代中已经安排的任务数
-       * @param cFactor 收敛因子
        */
-      def scheduleTask(remainedTime: Int, remainTasks: Task[K], scheduleTasked: Task[K], cFactor: Int = 0): Unit = {
+      def scheduleTask(remainedTime: Int, remainTasks: Task[K], scheduleTasked: Task[K]): Unit = {
         for (r <- remainTasks) {
           if (remainedTime >= 0) {
             val currentRemainedTime = remainedTime - r._2
             val currentRemainTasks = remainTasks.splitAt(remainTasks.indexOf(r) + 1)._2.filter(_._2 <= currentRemainedTime)
             if (remainedTime >= 0 && remainedTime <= cFactor) {
               tempTasks = scheduleTasked :: tempTasks
-              if (currentRemainedTime > 0) scheduleTask(currentRemainedTime, currentRemainTasks, r :: scheduleTasked, cFactor)
+              if (currentRemainedTime > 0) scheduleTask(currentRemainedTime, currentRemainTasks, r :: scheduleTasked)
             }
             if (currentRemainedTime > 0) {
               for (task <- currentRemainTasks) {
                 val nextRemainTasks = currentRemainTasks.splitAt(currentRemainTasks.indexOf(task) + 1)._2
-                scheduleTask(currentRemainedTime - task._2, nextRemainTasks, task :: r :: scheduleTasked, cFactor)
+                scheduleTask(currentRemainedTime - task._2, nextRemainTasks, task :: r :: scheduleTasked)
               }
             }
           }
         }
       }
-      scheduleTask(amTime, tasks, List())
+      scheduleTask(amTime._1, tasks, List())
       val amTasks = tempTasks
+      cFactor=pmTime._2//下午的收敛因子
       for {amTask <- amTasks} {
         val remainPMTasks = tasks.filterNot {
           case t => amTask.exists(_ == t)
         }.toList
         tempTasks = List()
-        scheduleTask(pmTime._1, remainPMTasks, List(), pmTime._2)
+        scheduleTask(pmTime._1, remainPMTasks, List())
         dailySchedule = (amTask -> tempTasks) :: dailySchedule
       }
       dailySchedule
     }
-
   }
   object SolutionTwo {
     def apply(str:String) = {
@@ -163,10 +161,10 @@ object ConferenceTrackManagementSolution {
     val sample = "Writing Fast Tests Against Enterprise Rails 60min\nOverdoing it in Python 45min\nLua for the Masses 30min\nRuby Errors from Mismatched Gem Versions 45min\nCommon Ruby Errors 45min\nRails for Python Developers lightning\nCommunicating Over Distance 60min\nAccounting-Driven Development 45min\nWoah 30min\nSit Down and Write 30min\nPair Programming vs Noise 45min\nRails Magic 60min\nRuby on Rails: Why We Should Move On 60min\nClojure Ate Scala (on my project) 45min\nProgramming in the Boondocks of Seattle 30min\nRuby vs. Clojure for Back-End Development 30min\nRuby on Rails Legacy App Maintenance 60min\nA World Without HackerNews 30min\nUser Interface CSS in Rails Apps 30min"
     val solverHandler=SolutionTwo(sample)
     val res=solverHandler.scheduleDailyTask()//返回所有满足要求的排列组合(不考虑任务执行的顺序,总共满足要求的排列组合有30711116种
-    val traces = res.last._2.map((res.last._1->_))//选择满足要求的部分结果进行数据转化
+    val traces = res.last._2.slice(0,if(res.last._2.size>10) 10 else res.last._2.size).map((res.last._1->_))//选择满足要求的部分结果进行数据转化
     var index=1
     for{
-      trace<-traces.slice(0,if(traces.size>10) 10 else traces.size)//打印10条结果
+      trace<-traces//打印10条结果
     } {
       SolutionTwo.resultToTerminal[String](trace, ("Lunch" -> 60), ("Networking Event" -> 1),index)
       index+=1

@@ -42,6 +42,7 @@ object TrainsSolution {
   class SolutionOne[Key](lookup: Graph[Key]) {
     /**
      * one to five solution
+     * 给定路径算距离
      * @param path
      * @param cost
      * @throws RuntimeException
@@ -62,23 +63,36 @@ object TrainsSolution {
     }
 
     /**
-     *
-     * @param from where is start
-     * @param to where is destination
-     * @param maxIterations max iterations number
-     * @param maxDistance max distance cost
+     * 给定起始点和终点寻找合适路径
+     * @param from 起始位置
+     * @param to 目的地
+     * @param maxIterations 最大迭代次数
+     * @param maxDistance  最大距离
+     * @param canCircle 是否准许出现环
      * @return
      */
-    def searchRouters(from: Key, to: Key, maxIterations: Int = 12, maxDistance: Int = Int.MaxValue): List[(Int, List[(Int, Key)])] = {
+    def searchRouters(from: Key, to: Key, maxIterations: Int = 12, maxDistance: Int = Int.MaxValue,canCircle:Boolean=true): List[(Int, List[(Int, Key)])] = {
       require(maxIterations > 0 && maxDistance > 0, "Invalid Argument,maxIteration or maxDistance must >0")
       var list: List[(Int, List[(Int, Key)])] = List()
+      /**
+       * 支持多环查找
+       * @param key
+       * @param prePath
+       * @param numIterations
+       * @param distance
+       */
       def doIterator(key: Key, prePath: List[(Int, Key)], numIterations: Int, distance: Int = 0): Unit = {
         if (numIterations <= maxIterations && distance <= maxDistance) {
           val next = lookup(key)
-          next.filter(_._2.equals(to)).foreach { dist =>
-            list = (numIterations, dist :: prePath) :: list
+          val isFind=next.filter(_._2.equals(to)) match{
+            case end::Nil=>{
+              list=(numIterations,end::prePath)::list
+              true
+            }
+            case _=> false
           }
-          next.foreach(n_next => doIterator(n_next._2, n_next :: prePath, numIterations + 1, distance + n_next._1))
+          //如果没有找到或者可以出现环时继续跌打查找满足要求的路径
+          if(!isFind||canCircle) next.foreach(n_next => doIterator(n_next._2, n_next :: prePath, numIterations + 1, distance + n_next._1)) //没有找到合适的路径
         }
       }
       doIterator(from, List(), 1)
@@ -116,7 +130,7 @@ object TrainsSolution {
           }
           println(label + res.toString)
       }
-      println("Output #6:" + solverHandler.searchRouters("C", "C", 10).filter(_._1 <= 3).size)
+      println("Output #6:" + solverHandler.searchRouters("C", "C", 10,60,false).filter(_._1 <= 3).size)
       println("Output #7:" + solverHandler.searchRouters("A", "C", 10).filter(_._1 == 4).size)
       println("Output #8:" + solverHandler.searchRouters("A", "C", 10, 60).map(_._2.foldLeft(0)(_ + _._1)).sortBy(i => i).head)
       println("Output #9:" + solverHandler.searchRouters("B", "B", 10, 60).map(_._2.foldLeft(0)(_ + _._1)).sortBy(i => i).head)
@@ -127,7 +141,7 @@ object TrainsSolution {
   def main(args: Array[String]) {
     type handler = List[(String, List[String], (List[String], Int) => Int)]
     val sample = "AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7"
-    val solverHandler = SolutionOne(sample)
+    val solverHandler = SolutionOne(sample)//图的存储采用邻接表的方式存储
     SolutionOne.resultToTerminal(solverHandler)
   }
 
