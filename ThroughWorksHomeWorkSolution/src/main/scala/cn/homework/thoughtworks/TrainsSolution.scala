@@ -58,7 +58,7 @@ object TrainsSolution {
             if (next_path.isEmpty) tempCost
             else distance(to :: next_path, tempCost)
           } else throw new RuntimeException("NO SUCH ROUTE")
-        case _ => throw new RuntimeException("Invalid Argument,Please Input path Length Must >0")
+        case _ => throw new RuntimeException("Invalid Argument,Please Input path Length Must >=2")
       }
     }
 
