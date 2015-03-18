@@ -77,11 +77,12 @@ object ConferenceTrackManagementSolution {
 
     /**
      *
-     * @param amTime 上午可用于安排任务总的时间
+     * @param amTime (上午可用于安排任务总的时间,上午安排可调节时间)
      * @param pmTime (下午可用于安排任务最大时间,根据下午可调节时间)
      * @return
      */
     def scheduleDailyTask(amTime: (Int,Int) = (3 * 60,0), pmTime: (Int, Int) = (4 * 60, 60)) = {
+      require(amTime._1>0&&amTime._2>0&&pmTime._1>0&&pmTime._2>0,"Invalid Argument,All amTime Items And All pmTime Items Must >0")
       var dailySchedule: DailyTask[K] = List()
       var tempTasks: List[Task[K]] = List()
       var cFactor=amTime._2//上午的收敛因子

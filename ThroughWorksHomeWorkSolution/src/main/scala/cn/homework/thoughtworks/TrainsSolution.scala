@@ -58,7 +58,7 @@ object TrainsSolution {
             if (next_path.isEmpty) tempCost
             else distance(to :: next_path, tempCost)
           } else throw new RuntimeException("NO SUCH ROUTE")
-        case _ => throw new RuntimeException("Invalid Argument")
+        case _ => throw new RuntimeException("Invalid Argument,Please Input path Length Must >0")
       }
     }
 
@@ -72,7 +72,7 @@ object TrainsSolution {
      * @return
      */
     def searchRouters(from: Key, to: Key, maxIterations: Int = 12, maxDistance: Int = Int.MaxValue,canCircle:Boolean=true): List[(Int, List[(Int, Key)])] = {
-      require(maxIterations > 0 && maxDistance > 0, "Invalid Argument,maxIteration or maxDistance must >0")
+      require(maxIterations > 0 && maxDistance > 0, "Invalid Argument,maxIteration Or maxDistance Must >0")
       var list: List[(Int, List[(Int, Key)])] = List()
       /**
        * 支持多环查找
