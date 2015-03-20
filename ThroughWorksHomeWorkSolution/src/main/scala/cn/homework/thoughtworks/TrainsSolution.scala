@@ -61,7 +61,7 @@ object TrainsSolution {
         case _ => throw new RuntimeException("Invalid Argument,Please Input path Length Must >=2")
       }
     }
-
+    def existsRouter(router:Key)=lookup.exists(_._1==router)
     /**
      * 给定起始点和终点寻找合适路径
      * @param from 起始位置
@@ -72,7 +72,7 @@ object TrainsSolution {
      * @return
      */
     def searchRouters(from: Key, to: Key, maxIterations: Int = 12, maxDistance: Int = Int.MaxValue,canCircle:Boolean=true): List[(Int, List[(Int, Key)])] = {
-      require(maxIterations > 0 && maxDistance > 0, "Invalid Argument,maxIteration Or maxDistance Must >0")
+      require(maxIterations > 0 && maxDistance > 0&&existsRouter(from)&&existsRouter(to), "Invalid Argument,maxIteration Or maxDistance Must >0 or Input Router Must In Routers")
       var list: List[(Int, List[(Int, Key)])] = List()
       /**
        * 支持多环查找
@@ -91,8 +91,8 @@ object TrainsSolution {
             }
             case _=> false
           }
-          //如果没有找到或者可以出现环时继续跌打查找满足要求的路径
-          if(!isFind||canCircle) next.foreach(n_next => doIterator(n_next._2, n_next :: prePath, numIterations + 1, distance + n_next._1)) //没有找到合适的路径
+          //如果没有找到或者可以出现环时继续迭代查找满足要求的路径
+          if(!isFind||canCircle) next.foreach(n_next => doIterator(n_next._2, n_next :: prePath, numIterations + 1, distance + n_next._1))
         }
       }
       doIterator(from, List(), 1)
@@ -112,7 +112,7 @@ object TrainsSolution {
           case Some(list) if !list.isEmpty => resource += (from -> ((distance -> to) :: list))
           case _ => resource += (from -> List((distance -> to)))
         }
-      }
+      }//生成邻接表
       new SolutionOne[String](resource.toMap)
     }
 
@@ -133,7 +133,7 @@ object TrainsSolution {
       println("Output #6:" + solverHandler.searchRouters("C", "C", 10,60,false).filter(_._1 <= 3).size)
       println("Output #7:" + solverHandler.searchRouters("A", "C", 10).filter(_._1 == 4).size)
       println("Output #8:" + solverHandler.searchRouters("A", "C", 10, 60).map(_._2.foldLeft(0)(_ + _._1)).sortBy(i => i).head)
-      println("Output #9:" + solverHandler.searchRouters("B", "B", 10, 60).map(_._2.foldLeft(0)(_ + _._1)).sortBy(i => i).head)
+      println("Output #9:" + solverHandler.searchRouters("B", "C", 10, 60).map(_._2.foldLeft(0)(_ + _._1)).sortBy(i => i).head)
       println("Output #10:" + solverHandler.searchRouters("C", "C", 10).map(_._2.foldLeft(0)(_ + _._1)).filter(_ < 30).size)
     }
   }
