@@ -74,7 +74,6 @@ object ConferenceTrackManagementSolution {
    * @tparam K 事件类型
    */
   class SolutionTwo[K](val tasks:Task[K]) {
-
     /**
      *
      * @param amTime (上午可用于安排任务总的时间,上午安排可调节时间)
